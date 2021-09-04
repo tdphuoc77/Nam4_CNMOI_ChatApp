@@ -16,13 +16,13 @@ export default function LoginScreen({ navigation }) {
   const [password, setPassword] = useState({ value: '', error: '' })
 
   const onLoginPressed = () => {
-    const emailError = emailValidator(sdt.value)
-    const passwordError = passwordValidator(password.value)
-    if (emailError || passwordError) {
-      setSdt({ ...sdt, error: emailError })
-      setPassword({ ...password, error: passwordError })
-      return
-    }
+    // const emailError = emailValidator(sdt.value)
+    // const passwordError = passwordValidator(password.value)
+    // if (emailError || passwordError) {
+    //   setSdt({ ...sdt, error: emailError })
+    //   setPassword({ ...password, error: passwordError })
+    //   return
+    // }
     navigation.reset({
       index: 0,
       routes: [{ name: 'Dashboard' }],

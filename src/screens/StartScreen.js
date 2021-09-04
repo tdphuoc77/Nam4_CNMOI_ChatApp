@@ -4,6 +4,7 @@ import Logo from '../components/Logo'
 import Header from '../components/Header'
 import Button from '../components/Button'
 import Paragraph from '../components/Paragraph'
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 export default function StartScreen({ navigation }) {
   return (
@@ -11,7 +12,6 @@ export default function StartScreen({ navigation }) {
       <Logo />
       <Header>WELLCOM</Header>
       <Paragraph>
-
       </Paragraph>
       <Button
         mode="contained"
