@@ -10,18 +10,22 @@ const windowHeight = Dimensions.get("window").height;
 export default function Menu({ onPressGroup, onPressChat, onPressMore }) {
     return (
         <SafeAreaView style={styles.container}>
+
             <View style={styles.iconView}>
                 <FontAwesome name="wechat" size={30} color="#3399cc" onPress={onPressChat} />
                 <Text style={styles.txt}> Chat</Text>
             </View>
+
             <View style={styles.iconView}>
                 <FontAwesome name="group" size={30} color="#3399cc" onPress={onPressGroup} />
                 <Text style={styles.txt}> Group</Text>
             </View>
+
             <View style={styles.iconView}>
                 <Entypo name="menu" size={30} color="#3399cc" onPress={onPressMore} />
                 <Text style={styles.txt}> More</Text>
             </View>
+
         </SafeAreaView>
     )
 }

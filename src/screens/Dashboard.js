@@ -70,7 +70,7 @@ export default function Dashboard({ navigation }) {
           <View>
             <Menu
               onPressGroup={() => navigation.navigate("StartScreen")}
-              onPressMore={() => navigation.navigate("More")}
+              onPressMore={() => navigation.toggleDrawer()}
             />
           </View>
         </View>

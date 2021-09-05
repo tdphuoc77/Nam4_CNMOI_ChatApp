@@ -11,14 +11,17 @@ import {
   Dashboard,
   MessageScreen,
 } from './src/screens'
+import { createDrawerNavigator } from '@react-navigation/drawer'
+import CustomDrawerMenu from './src/components/CustomDrawerMenu'
 
-const Stack = createStackNavigator()
+// const Stack = createStackNavigator()
+const Drawer = createDrawerNavigator();
 
 export default function App() {
   return (
     <Provider theme={theme}>
       <NavigationContainer>
-        <Stack.Navigator
+        {/* <Stack.Navigator
           initialRouteName="StartScreen"
           screenOptions={{
             headerShown: false,
@@ -33,8 +36,24 @@ export default function App() {
             component={ResetPasswordScreen}
           />
           <Stack.Screen name="MessageScreen" component={MessageScreen} />
-        </Stack.Navigator>
+        </Stack.Navigator> */}
+
+        <Drawer.Navigator initialRouteName="StartScreen"
+          screenOptions={{
+            headerShown: false,
+          }} drawerContent={(props) => <CustomDrawerMenu {...props} />}>
+          <Drawer.Screen name="StartScreen" component={StartScreen} />
+          <Drawer.Screen name="LoginScreen" component={LoginScreen} />
+          <Drawer.Screen name="RegisterScreen" component={RegisterScreen} />
+          <Drawer.Screen name="Dashboard" component={Dashboard} />
+          <Drawer.Screen
+            name="ResetPasswordScreen"
+            component={ResetPasswordScreen}
+          />
+          <Drawer.Screen name="MessageScreen" component={MessageScreen} />
+        </Drawer.Navigator>
+
       </NavigationContainer>
-    </Provider>
+    </Provider >
   )
 }
