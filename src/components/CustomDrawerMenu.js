@@ -14,7 +14,9 @@ export default function CustomDrawerMenu(props) {
     const toggleTheme = () => {
         setIsDarkTheme(!isDarkTheme);
     }
+
     return (
+
         <View style={styles.container}>
 
             <DrawerContentScrollView {...props} >
@@ -106,11 +108,12 @@ export default function CustomDrawerMenu(props) {
 
                 </View>
             </DrawerContentScrollView>
+
             <Drawer.Section style={styles.bottomDrawerSection}>
                 <DrawerItem
                     icon={({ color, size }) => (
                         <Icon
-                            name="exit-to-app"
+                            name="location-exit"
                             color={color}
                             size={size} />
                     )}
@@ -119,10 +122,28 @@ export default function CustomDrawerMenu(props) {
                 />
             </Drawer.Section>
 
+            {/*  chưa đăng nhập */}
+            {/* <DrawerContentScrollView {...props}>
+                <View style={styles.drawerContent}>
+                    <Drawer.Section style={styles.drawerSection}>
+                        <DrawerItem
+                            icon={({ color, size }) => (
+                                <Icon
+                                    name="login"
+                                    color={color}
+                                    size={size} />
+                            )}
+                            label='Đăng nhập'
+                            onPress={() => { props.navigation.navigate('LoginScreen') }}
+                        />
+                    </Drawer.Section>
+                </View>
+            </DrawerContentScrollView> */}
 
         </View>
     );
 }
+
 
 const styles = StyleSheet.create({
     container: {

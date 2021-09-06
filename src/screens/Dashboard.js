@@ -6,6 +6,7 @@ import UserMessage from '../components/UserMessage'
 import { SafeAreaView, ScrollView, StyleSheet, View } from 'react-native'
 import img from '../assets/icon.png'
 import { Dimensions } from "react-native";
+import { DrawerActions } from '@react-navigation/routers'
 
 
 // const windowWidth = Dimensions.get("window").width;
@@ -70,7 +71,12 @@ export default function Dashboard({ navigation }) {
           <View>
             <Menu
               onPressGroup={() => navigation.navigate("StartScreen")}
-              onPressMore={() => navigation.toggleDrawer()}
+              // onPressMore={() => navigation.toggleDrawer()}
+              onPressMore={() => {
+
+                navigation.dispatch(DrawerActions.openDrawer())
+                console.log("open")
+              }}
             />
           </View>
         </View>
